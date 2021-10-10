@@ -32,7 +32,42 @@
   font-display: swap;
 }
 
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+html{
+  height: 100%;
+}
+
 body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -54,13 +89,37 @@ body{
 
 /*Pages*/
 
+.container{
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.container-for-elements{
+  display: flex;
+  justify-content: space-between;
+}
+
 .description{
   color: #444444;
 }
 
-.page-header{
+.page-header .container{
   color: #000000;
   background-color: #FFE17F;
+  padding: 0 25px 0 60px;
+  box-sizing: border-box;
+}
+
+/*Navigation*/
+.nav-flex{
+  display: flex;
+}
+
+.nav-list{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 510px;
 }
 
 .nav-link{
@@ -73,6 +132,11 @@ body{
   line-height: 19px;
 }
 
+.nav-form{
+  margin-right: auto;
+  width: 480px;
+}
+
 .nav-bottom{
   font-family: Raleway, sans-serif;
   font-weight: 800;
@@ -81,8 +145,13 @@ body{
   text-transform: uppercase;
 }
 
-.main-index{
+.nav-catalog{
+  margin-right: auto;
+  width: 310px;
+}
 
+.main-container{
+  flex-grow: 1;
 }
 
 /*Slider*/
@@ -92,6 +161,21 @@ body{
   font-weight: 800;
   font-size: 50px;
   line-height: 50px;
+}
+
+/*List*/
+.slider-list{
+  margin: 0;
+  padding: 0;
+}
+
+.slider-item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide-info{
+  width: 560px;
 }
 
 /*Table*/
@@ -107,14 +191,43 @@ body{
 }
 
 /*Pagination*/
+.slider-pagination{
+  display: flex;
+  width: 80px;
+  justify-content: space-between;
+}
+
 .slider-pagination-button{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.slider-pagination-button-current{
+  background: #000000;
 }
 
 /*Goods*/
 
 /*List*/
-.goods-icon{
+.goods-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods-item{
+  width: 160px;
+
+}
+
+.goods-icon-wrapper{
+  height: 160px;
   background: #FFE17F;
+  box-sizing: border-box;
 }
 
 /*Title*/
@@ -141,6 +254,23 @@ body{
   background-color: #F0F0F0;
 }
 
+.services-container{
+  display: flex;
+}
+
+/*List*/
+.services-list{
+  margin-right: 120px;
+}
+
+.services-item{
+  width: 280px;
+}
+
+.services-slider-list{
+  width: 560px;
+}
+
 /*Button*/
 .services-slider-button-current{
   background-color: #000000;
@@ -148,6 +278,10 @@ body{
 
 .services-slider-button-current button{
   color: #FFE17F;
+}
+
+.service-description{
+  width: 500px;
 }
 
 /*Rare delivery*/
@@ -169,7 +303,11 @@ body{
 }
 
 /*About and contacts*/
+
 /*About*/
+.about{
+  width: 560px;
+}
 
 /*Title*/
 .about-title{
@@ -182,6 +320,9 @@ body{
 }
 
 /*Contacts*/
+.contacts{
+  width: 560px;
+}
 
 /*Title*/
 .contacts-title{
@@ -201,15 +342,23 @@ body{
 }
 
 .contacts-phone{
-
   color: #444444;
 }
 
 /*Newsletter*/
 
+.newsletter{
+  color: #000000;
+  background-color: #F0F0F0;
+}
+
 /*Title*/
 .newsletter-title{
+  width: 560px;
+}
 
+.newsletter-desription{
+  width: 560px;
 }
 
 /*Newsletter form*/
@@ -231,7 +380,11 @@ body{
   background-color: #444444;
 }
 
-.contacts-address-text {
+.footer-address{
+  width: 240px;
+}
+
+.footer-contacts-address {
   font-style: normal;
   font-size: 16px;
   line-height: 19px;
@@ -239,21 +392,29 @@ body{
 }
 
 /*List*/
+.footer-nav-list{
+  display:flex;
+  justify-content: space-between;
+  width: 465px;
+}
+
 .footer-nav .button{
   color: #ffffff;
 }
 
 /*Phone*/
-.footer-contacts-address{
-  text-align: right;
-
-}
 
 .footer-contacts-phone{
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;
   font-style: normal;
+}
+
+.footer-social-list{
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*Catalog.html*/
