@@ -483,6 +483,7 @@ body{
   padding-right: 69px;
   color: #000000;
   background-color: #EBEBEB;
+  height: 100%;
 }
 
 .filter-form{
@@ -516,7 +517,8 @@ body{
 }
 
 .product-container{
-  padding: 69px 72px;
+  padding: 69px 72px 77px 72px;
+  padding-right: 0;
 }
 
 /*List*/
