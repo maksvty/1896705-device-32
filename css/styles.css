@@ -221,7 +221,6 @@ body{
 
 .goods-item{
   width: 160px;
-
 }
 
 .goods-icon-wrapper{
@@ -419,14 +418,20 @@ body{
 
 /*Catalog.html*/
 
+.inner-header{
+
+}
+
 /*Title*/
 .inner-header-title{
-
+  margin-left: 64px;
 }
 
 /* Breadcrumbs */
 .breadcrumbs{
+  display: flex;
   color: #000000;
+  margin-left: 64px;
 }
 
 /*Link*/
@@ -436,6 +441,15 @@ body{
   color: inherit;
   text-decoration: none;
   opacity: 0.6;
+}
+
+.catalog{
+  display: flex;
+}
+
+.filter{
+  width: 468px;
+  flex-grow: 1;
 }
 
 /*Catalog title*/
@@ -451,19 +465,32 @@ body{
 /*Catalog filter*/
 
 /*Title*/
-.catalog-filter-title{
+.filter-title-container{
+  display:flex;
+  flex-direction: row-reverse;
+  padding-right: 174px;
   color: #000000;
   background: #DCDCDC;
 }
 
+.filter-title{
+}
+
 /*Form*/
 .filter-container{
+  display:flex;
+  flex-direction: row-reverse;
+  padding-right: 69px;
   color: #000000;
   background-color: #EBEBEB;
 }
 
+.filter-form{
+  width: 200px;
+}
+
 /*Legend*/
-.catalog-filter-form-title{
+.filter-form-title{
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
@@ -476,23 +503,49 @@ body{
 
 /*Catalog products*/
 
+.catalog-products{
+  width: 972px;
+  flex-grow: 1;
+}
+
 .sorting-container{
+  display: flex;
+  padding-left: 72px;
   color: #000000;
   background-color: #EBEBEB;
 }
 
+.product-container{
+  padding: 69px 72px;
+}
+
 /*List*/
+.product-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 760px;
+}
+
+.product-card{
+  width: 360px;
+  margin-right: 40px;
+}
+
+.product-card:nth-of-type(2n){
+  margin-right: 0;
+}
+
 /*Title*/
 .product-card-title{
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.02em;
+  width: 280px;
 }
 
 .cost{
   line-height: 21px;
-  text-align: right;
   color: #444444;
 }
 
@@ -510,11 +563,25 @@ body{
 .button-all{
   font-size: 16px;
   line-height: 19px;
+  width: 760px;
+  background-color: #fff;
+  border: 3px solid rgba(0, 0, 0, 0.1);
 }
 
 /*Pagination*/
 .catalog-pagination{
+  display: flex;
+  width: 700px;
   background: #EBEBEB;
+  padding: 0 30px;
+}
+
+.catalog-pagination-item:nth-of-type(2){
+  margin-left: auto;
+}
+
+.catalog-pagination-item:nth-of-type(6){
+  margin-right: auto;
 }
 
 .catalog-pagination-link{
