@@ -433,7 +433,7 @@ body{
 .breadcrumbs{
   display: flex;
   color: #000000;
-  margin-left: 64px;
+  margin-left: 61px;
 }
 
 /*Link*/
@@ -450,8 +450,7 @@ body{
 }
 
 .filter{
-  width: 468px;
-  flex-grow: 1;
+  width: 328px;
 }
 
 /*Catalog title*/
@@ -468,9 +467,7 @@ body{
 
 /*Title*/
 .filter-title{
-  display:flex;
-  flex-direction: row-reverse;
-  padding-right: 174px;
+  padding-left: 60px;
   color: #000000;
   background: #DCDCDC;
 }
@@ -480,9 +477,7 @@ body{
 
 /*Form*/
 .catalog-filter{
-  display:flex;
-  flex-direction: row-reverse;
-  padding-right: 69px;
+  padding-left: 60px;
   color: #000000;
   background-color: #EBEBEB;
   height: 100%;
@@ -507,8 +502,6 @@ body{
 /*Catalog products*/
 
 .catalog-products{
-  width: 972px;
-  flex-grow: 1;
 }
 
 .sorting{
