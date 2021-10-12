@@ -253,7 +253,7 @@ body{
   background-color: #F0F0F0;
 }
 
-.services-container{
+.services-layout{
   display: flex;
 }
 
@@ -288,6 +288,8 @@ body{
 .rare-delivery{
   color: #000000;
   background-color: #F0F0F0;
+  width: 1160px;
+  margin: 0 auto;
 }
 
 /*Title*/
@@ -465,7 +467,7 @@ body{
 /*Catalog filter*/
 
 /*Title*/
-.filter-title-container{
+.filter-title{
   display:flex;
   flex-direction: row-reverse;
   padding-right: 174px;
@@ -477,7 +479,7 @@ body{
 }
 
 /*Form*/
-.filter-container{
+.catalog-filter{
   display:flex;
   flex-direction: row-reverse;
   padding-right: 69px;
@@ -509,14 +511,14 @@ body{
   flex-grow: 1;
 }
 
-.sorting-container{
+.sorting{
   display: flex;
   padding-left: 72px;
   color: #000000;
   background-color: #EBEBEB;
 }
 
-.product-container{
+.products{
   padding: 69px 72px 77px 72px;
   padding-right: 0;
 }
