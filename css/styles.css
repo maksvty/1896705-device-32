@@ -511,6 +511,10 @@ body{
   background-color: #EBEBEB;
 }
 
+.sort-title{
+  margin-right: 55px;
+}
+
 .products{
   padding: 69px 72px 77px 72px;
   padding-right: 0;
@@ -563,6 +567,7 @@ body{
   width: 760px;
   background-color: #fff;
   border: 3px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 51px;
 }
 
 /*Pagination*/
