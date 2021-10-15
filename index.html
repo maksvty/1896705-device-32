@@ -7,24 +7,24 @@
   </head>
  	<body>
     <header class="page-header">
-      <div class="container">
+      <div class="container page-header-container">
         <a href="index.html">
           <img class="header-logo" src="image/header/nav-logo.svg" width="145" height="36" alt="Интернет-магазин гаджетов 'Device'">
         </a>
         <nav class="nav">
           <div class = "nav-top nav-flex">
             <form class="nav-form" action="#">
-              <label for="nav-search">Поиск по сайту</label>
+              <label class="visually-hidden" for="nav-search">Поиск по сайту</label>
               <input class="nav-search" id="nav-search" type="search" placeholder="Поиск по сайту">
             </form>
             <ul class="nav-list nav-user">
-              <li class="nav-item">
+              <li class="nav-item login">
                 <a class="nav-link" href="#">Войти</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link visabillity-hidden exit" href="#">Выйти</a>
+                <a class="nav-link visually-hidden exit" href="#">Выйти</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item compare">
                 <a class="nav-link" href="#">Сравнить</a>
               </li>
               <li class="nav-item">
@@ -35,13 +35,13 @@
           <div class="nav-bottom nav-flex">
             <a class="nav-catalog nav-link" href="catalog.html">Каталог товаров</a>
             <ul class="nav-list">
-              <li class="nav-item">
+              <li class="nav-item nav-item-delivery">
                <a class="nav-link" href="#">Доставка</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Гарантия</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item nav-item-contacts">
                 <a class="nav-link" href="#">Контакты</a>
               </li>
             </ul>
@@ -71,12 +71,14 @@
                 <p class="description slide-description">
                 Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
                 </p>
-                <a class="button" href="#">Подробнее</a>
+                <div class = "more-details">
+                  <a class="button more-details-button" href="#">Подробнее</a>
+                </div>
                 <table class="slide-table">
                   <caption class="visually-hidden">Характеристика товара</caption>
                   <tr class="slide-table-row">
                     <td class="slide-table-data"><b>800 м</b></td>
-                    <td class="slide-table-data"><b>5 м</b></td>
+                    <td class="slide-table-data"><b>50 м</b></td>
                   </tr>
                   <tr class="slide-table-row">
                     <th class="slide-table-data-title">Дальность полета</th>
@@ -164,11 +166,11 @@
               <h3 class="goods-item-title">Виртуальная реальность</h3>
             </li>
             <li class="goods-item">
-              <div class="goods-icon-wrapper">
+              <div class="goods-icon-wrapper monopad">
                 <img class="goods-icon monopad" src="image/goods/good-monopad.svg" width="86"
                 height="117" alt="Моноподы для селфи">
               </div>
-              <h3 class="goods-item-title">Моноподы для селфи</h3>
+              <h3 class="goods-item-title">Моноподы<br>для селфи</h3>
             </li>
             <li class="goods-item">
               <div class="goods-icon-wrapper">
@@ -202,13 +204,13 @@
           <h2 class="visually-hidden">Услуги</h2>
           <ol class="services-list">
             <li class="services-item services-slider-button services-slider-button-current" id="delivery">
-              <button class="button" type="button">Доставка</button>
+              <button class="button service-button" type="button">Доставка</button>
             </li>
             <li class="services-item" id="guarantee">
-              <button class="button" type="button">Гарантия</button>
+              <button class="button service-button" type="button">Гарантия</button>
             </li>
             <li class="services-item" id="credit">
-              <button class="button" type="button">Кредит</button>
+              <button class="button service-button" type="button">Кредит</button>
             </li>
           </ol>
           <ol class="services-slider-list">
@@ -228,18 +230,20 @@
         </div>
       </section>
       <div class="rare-delivery">
-        <h2 class="rare-delivery-title">Доставим редкий товар под заказ</h2>
-        <button class="info" type="button">
-          <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-        </button>
+        <div class="container rare-delivery-container">
+          <h2 class="rare-delivery-title">Доставим редкий товар под заказ</h2>
+          <button class="info" type="button">
+            <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+          </button>
+        </div>
       </div>
       <section class="about-contacts">
         <div class="container-for-elements container">
           <h2 class="visually-hidden">Блок с информацией о нас и контактными данными.</h2>
           <section class="about">
             <h2 class="about-title sector-title">О нас</h2>
-            <p class="description">Огромный выбор гаджетов не оставит равнодушным<br>гика, который есть в каждом из нас.</p>
-            <p class="description">Мы можем доставить ваш товар в самые отдалённые<br>уголки России транспортными компаниями:</p>
+            <p class="description about-description">Огромный выбор гаджетов не оставит равнодушным<br>гика, который есть в каждом из нас.</p>
+            <p class="description about-description">Мы можем доставить ваш товар в самые отдалённые<br>уголки России транспортными компаниями:</p>
             <ul class="about-list">
               <li class="about-item">
                 Меловые линии
@@ -251,11 +255,11 @@
                 ТоксБеррии
               </li>
             </ul>
-            <a class="button" href="#">Подробнее о нас</a>
+            <a class="button contacts-button" href="#">Подробнее о нас</a>
           </section>
           <section class="contacts">
             <h2 class="contacts-title sector-title">Контакты</h2>
-            <p class="description">Вы можете забрать товар сами, заехав в наш офис.<br>Заодно, сможете проверить работоспособность покупки.</p>
+            <p class="description contacts-description">Вы можете забрать товар сами, заехав в наш офис.<br>Заодно, сможете проверить работоспособность покупки.</p>
             <h3 class="contacts-subtitle">Интернет-магазин «Девайс»</h3>
             <address class="contacts-address">
               <p>Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
@@ -266,22 +270,22 @@
               <li class="contacts-schedule-item">пн—пт: с 10:00 до 22:00</li>
               <li class="contacts-schedule-item">сб—вс: с 10:00 до 19:00</li>
             </ul>
-            <a class="button" href="#">Напишите нам</a>
+            <a class="button contacts-button" href="#">Напишите нам</a>
           </section>
         </div>
       </section>
       <section class="newsletter">
         <div class="container">
-          <div class="container-for-elements">
-            <h2 class="newsletter-title sector-title">Подпишитесь на рассылку</h2>
+          <div class="container-for-elements newsletter-top">
+            <h2 class="newsletter-title sector-title">Подпишитесь<br>на рассылку</h2>
             <p class="description newsletter-desription">Еженедельный дайджест с обзорами новинок,<br>длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
           </div>
-          <div class="container-for-elements">
+          <div class="container-for-elements newsletter-bottom">
             <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
-              <label class="description" for="newsletter-email">Ваш e-mail</label>
-              <input class="newsletter-form-field" type="email" name="newsletter-email" id="newsletter-email" required>
-              <button class="button newsletter-button" type="submit">
-                Подписаться
+              <label class="visually-hidden" for="newsletter-email">Ваш e-mail</label>
+              <input class="newsletter-form-field" type="email" name="newsletter-email" placeholder="Ваш e-mail" id="newsletter-email" required>
+              <button class="newsletter-button" type="submit">
+                <span class="newsletter-button-text">Подписаться</span>
               </button>
             </form>
             <div class = "free">Это бесплатно</div>
@@ -291,33 +295,33 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <a href="index.html">
-          <img class="footer-logo" src="image/footer/footer-logo.svg" alt="Интернет-магазин гаджетов 'Device'">
+        <a class="footer-logo" href="index.html">
+          <img src="image/footer/footer-logo.svg" alt="Интернет-магазин гаджетов 'Device'">
         </a>
-        <div class="container-for-elements">
-          <section class="footer-address">
+        <div class="footer-layout">
+          <section class="footer-address footer-column-1">
             <h2 class="visually-hidden">Адрес</h2>
             <address class="footer-contacts-address">
               <p>Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
             </address>
           </section>
-          <div>
+          <div class="footer-column-2">
             <nav class="footer-nav">
               <ul class="footer-nav-list">
                 <li class="footer-nav-item">
-                  <a class="button">Доставка</a>
+                  <a class="button footer-button">Доставка</a>
                 </li>
                 <li class="footer-nav-item">
-                  <a class="button">Гарантия</a>
+                  <a class="button footer-button">Гарантия</a>
                 </li>
                 <li class="footer-nav-item">
-                  <a class="button">Контакты</a>
+                  <a class="button footer-button">Контакты</a>
                 </li>
               </ul>
             </nav>
-            <section class="footer-social container-for-elements">
+            <section class="footer-social">
               <h2 class="visually-hidden">Социальные сети</h2>
-              <ul class="footer-social-list">
+              <ul class="footer-social-list container-for-elements">
                 <li class="footer-social-item">
                   <a class="button button-social" href="https://www.facebook.com/htmlacademy">
                     <span class="visually-hidden">Фейсбук</span>
@@ -336,7 +340,7 @@
               </ul>
             </section>
           </div>
-          <div>
+          <div class="footer-column-3">
             <section class="footer-phone">
               <h2 class="visually-hidden">Телефон</h2>
               <address class="footer-phone">

@@ -68,6 +68,7 @@ body{
   flex-direction: column;
   min-height: 100%;
   margin: 0;
+  padding-top: 40px;
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -76,6 +77,7 @@ body{
 }
 
 .button{
+  position: relative;
   font-family: Raleway, sans-serif;
   font-size: 18px;
   font-weight: 800;
@@ -85,6 +87,18 @@ body{
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
+  z-index: 1;
+}
+
+.button:before{
+  content: "";
+  position: absolute;
+  border-bottom: 8px solid #FFE17F;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  z-index: -1;
 }
 
 /*Pages*/
@@ -97,32 +111,41 @@ body{
 .container-for-elements{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .description{
   color: #444444;
 }
 
-.page-header .container{
+.page-header-container{
+  position: relative;
   color: #000000;
   background-color: #FFE17F;
-  padding: 0 25px 0 60px;
+  padding: 49px 60px 53px 60px;
   box-sizing: border-box;
+}
+
+/*Header logo*/
+.header-logo{
+  position: absolute;
+  top: -23px;
 }
 
 /*Navigation*/
 .nav-flex{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-list{
   display: flex;
-  margin: 0;
-  padding: 0;
-  width: 510px;
+  flex-wrap: wrap;
+  width: 500px;
 }
 
 .nav-link{
+  display: block;
   color: inherit;
   text-decoration: none;
 }
@@ -130,11 +153,34 @@ body{
 .nav-top{
   font-size: 16px;
   line-height: 19px;
+  margin-bottom: 45px;
 }
 
 .nav-form{
+  margin-left: 35px;
   margin-right: auto;
   width: 480px;
+}
+
+.nav-search{
+  background-color: transparent;
+}
+
+.nav-search::placeholder{
+  color: #000000;
+  opacity: 0.3;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.login{
+  margin-left: 25px;
+  margin-right: 10px;
+}
+
+.compare{
+  margin-left: auto;
+  margin-right: 80px;
 }
 
 .nav-bottom{
@@ -150,17 +196,64 @@ body{
   width: 310px;
 }
 
+.nav-item-delivery{
+  margin-right: 30px;
+}
+
+.nav-item-contacts{
+  margin-left: auto;
+}
+
 .main-container{
   flex-grow: 1;
 }
 
 /*Slider*/
+.slider{
+  position: relative;
+  top: -35px;
+  margin-bottom: 33px;
+}
+
+.slide-1,
+.slide-2,
+.slide3,
+.slider-item{
+  position: relative;
+  z-index: 1;
+}
+
+.slider-item:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 150px;
+  background-color: #FFE17F;
+  z-index: -1;
+  box-sizing: border-box;
+}
+
+.slide-1:after{
+  position: absolute;
+  content: "01";
+  font-size: 180px;
+  font-weight: 800;
+  color: #FFFFFF;
+  right: 50px;
+  top: 80px;
+  z-index: -1;
+}
+
+.slider-button{
+  position: absolute;
+}
 
 .slide-title{
   font-family: Raleway, sans-serif;
   font-weight: 800;
   font-size: 50px;
   line-height: 50px;
+  margin-bottom: 30px;
 }
 
 /*List*/
@@ -172,10 +265,24 @@ body{
 .slider-item{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .slide-info{
   width: 560px;
+  padding-top: 120px;
+}
+
+.slide-description{
+  margin-bottom: 45px;
+}
+
+.more-details{
+  margin-bottom: 60px;
+}
+
+.more-details-button{
+  padding: 0 40px;
 }
 
 /*Table*/
@@ -193,8 +300,10 @@ body{
 /*Pagination*/
 .slider-pagination{
   display: flex;
-  width: 80px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 114px;
+  position: absolute;
+  top: 0px;
 }
 
 .slider-pagination-button{
@@ -205,6 +314,7 @@ body{
   background: #FFFFFF;
   box-sizing: border-box;
   padding: 0;
+  margin-right: 22px;
 }
 
 .slider-pagination-button-current{
@@ -212,10 +322,14 @@ body{
 }
 
 /*Goods*/
+.goods{
+  margin-bottom: 180px;
+}
 
 /*List*/
 .goods-list{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -224,9 +338,17 @@ body{
 }
 
 .goods-icon-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 160px;
   background: #FFE17F;
   box-sizing: border-box;
+  margin-bottom: 33px;
+}
+
+.monopad{
+  align-self: flex-end;
 }
 
 /*Title*/
@@ -247,27 +369,52 @@ body{
   line-height: 50px;
 }
 
+.service-title{
+  margin-bottom: 35px;
+}
+
 /*Services slider*/
 .services-slider{
+  min-height: 288px;
   color: #000000;
   background-color: #F0F0F0;
+  margin-bottom: 90px;
 }
 
 .services-layout{
   display: flex;
+  flex-wrap: wrap;
 }
 
 /*List*/
 .services-list{
   margin-right: 120px;
+  position: relative;
+  top: -19px;
 }
 
 .services-item{
   width: 280px;
+  padding: 5px 0;
+  margin-bottom: 25px;
+}
+
+.services-item:last-of-type{
+  margin-bottom: 0;
+}
+
+.service-button{
+  min-width: 160px;
+}
+
+.service-button:before{
+  border-bottom: 8px solid #FFC700;
 }
 
 .services-slider-list{
   width: 560px;
+  position: relative;
+  top: -30px;
 }
 
 /*Button*/
@@ -279,17 +426,26 @@ body{
   color: #FFE17F;
 }
 
+.services-slider-button-current button:before{
+  border: none;
+}
+
 .service-description{
   width: 500px;
 }
 
 /*Rare delivery*/
-
 .rare-delivery{
+  margin-bottom: 95px;
+}
+
+.rare-delivery-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #000000;
   background-color: #F0F0F0;
-  width: 1160px;
-  margin: 0 auto;
+  padding: 40px 0;
 }
 
 /*Title*/
@@ -298,26 +454,63 @@ body{
   font-weight: 800;
   font-size: 20px;
   line-height: 23px;
-  text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
+
 /*About and contacts*/
+.contacts-button{
+  display: block;
+  width: 260px;
+}
+
+.about-contacts{
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 85px;
+}
 
 /*About*/
 .about{
   width: 560px;
 }
 
+.about:before{
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 7px;
+  background-color: #000000;
+  top: 0;
+}
+
 /*Title*/
 .about-title{
+  margin-bottom: 45px;
+}
+
+.about-description{
+  margin-bottom: 30px;
+}
+
+.about-description:last-of-type{
+  margin-bottom: 75px;
 }
 
 /*List*/
+.about-list{
+  margin-bottom: 73px;
+}
+
 .about-item{
   font-weight: 700;
   line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.about-item:last-of-type{
+ margin-bottom: 0;
 }
 
 /*Contacts*/
@@ -325,9 +518,22 @@ body{
   width: 560px;
 }
 
+.contacts:before{
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 7px;
+  background-color: #000000;
+  top: 0;
+}
+
 /*Title*/
 .contacts-title{
+  margin-bottom: 45px;
+}
 
+.contacts-description{
+  margin-bottom: 30px;
 }
 
 /*Subtitle*/
@@ -335,22 +541,37 @@ body{
   font-size: 24px;
   font-weight: 700;
   color: #444444;
+  margin-bottom: 15px;
 }
 
 .contacts-address {
   font-style: normal;
   color: #444444;
+  margin-bottom: 30px;
 }
 
 .contacts-phone{
   color: #444444;
 }
 
+.contacts-schedule{
+  margin-bottom: 67px;
+}
+
 /*Newsletter*/
 
 .newsletter{
+  padding: 75px 0 131px;
   color: #000000;
   background-color: #F0F0F0;
+}
+
+.newsletter-top{
+  margin-bottom: 60px;
+}
+
+.newsletter-bottom{
+  align-items: center;
 }
 
 /*Title*/
@@ -360,13 +581,45 @@ body{
 
 .newsletter-desription{
   width: 560px;
+  margin-top: 10px;
 }
 
 /*Newsletter form*/
+.email-label{
+  position: absolute;
+  color: #444444;
+  opacity: 0.5;
+}
+.newsletter-form{
+  display: flex;
+}
+
 .newsletter-form-field{
+  width: 600px;
+  background-color: transparent;
   border: none;
-  border-bottom: 3px solid #000000;
-  opacity: 0.1;
+  border-bottom: 3px solid rgba(0, 0, 0, .1);
+}
+
+.newsletter-form-field::placeholder{
+  font-size: 18px;
+  color: #444444;
+  opacity: 0.5;
+
+}
+
+.newsletter-button{
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 21px;
+  color: #000000;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 38px;
+  border: 3px solid rgba(0,0,0,.1);
+  box-sizing: border-box;
 }
 
 .free{
@@ -377,13 +630,35 @@ body{
 /*Footer*/
 
 .page-footer{
+  padding: 62px 140px 55px 138px;
   color: #ffffff;
   background-color: #444444;
 }
 
+.footer-logo{
+  display: block;
+  margin-bottom: 26px;
+}
+
+/*Footer layout*/
+.footer-layout{
+  display: flex;
+}
+
 .footer-address{
   width: 240px;
+  margin-right: 124px;
 }
+
+.footer-address:after{
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 7px;
+  background-color: #FFC700;
+  margin-top: 65px;
+}
+
 
 .footer-contacts-address {
   font-style: normal;
@@ -392,18 +667,39 @@ body{
   color: #ffffff;
 }
 
-/*List*/
-.footer-nav-list{
-  display:flex;
-  justify-content: space-between;
-  width: 465px;
+/*Footer column 2*/
+.footer-column-2{
+  margin-right: 182px;
 }
 
-.footer-nav .button{
+/*List*/
+.footer-nav-list{
+  display: flex;
+  margin-bottom: 57px;
+}
+
+.footer-nav-item{
+  margin-right: 28px;
+}
+
+.footer-nav-item:nth-of-type(3){
+  margin-right: 0;
+}
+
+.footer-button{
   color: #ffffff;
 }
 
+.footer-button:before{
+  border: none;
+}
+
 /*Phone*/
+.footer-phone{
+  text-align: right;
+  margin-bottom: 60px;
+  text-align: right;
+}
 
 .footer-contacts-phone{
   color: #ffffff;
@@ -412,10 +708,21 @@ body{
   font-style: normal;
 }
 
+.htmlacademy-link{
+  display: block;
+  text-align: right;
+}
+
 .footer-social-list{
   width: 150px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 142px;
+}
+
+.footer-social-item{
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
 }
 
 /*Catalog.html*/
@@ -432,6 +739,7 @@ body{
 /* Breadcrumbs */
 .breadcrumbs{
   display: flex;
+  flex-wrap: wrap;
   color: #000000;
   margin-left: 61px;
 }
@@ -445,8 +753,9 @@ body{
   opacity: 0.6;
 }
 
-.catalog{
+.catalog-container{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .filter{
@@ -506,6 +815,7 @@ body{
 
 .sorting{
   display: flex;
+  flex-wrap: wrap;
   padding-left: 72px;
   color: #000000;
   background-color: #EBEBEB;
@@ -522,14 +832,16 @@ body{
 
 /*List*/
 .product-list{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 360px);
+  grid-column-gap: 40px;
+  grid-row-gap: 44px;
   width: 760px;
+
 }
 
 .product-card{
-  width: 360px;
-  margin-right: 40px;
+
 }
 
 .product-card:nth-of-type(2n){
@@ -573,6 +885,7 @@ body{
 /*Pagination*/
 .catalog-pagination{
   display: flex;
+  flex-wrap: wrap;
   width: 700px;
   background: #EBEBEB;
   padding: 0 30px;
@@ -607,6 +920,4 @@ body{
   color: #000000;
   opacity: 1;
 }
-
-
 
