@@ -110,6 +110,7 @@ img{
 .container{
   width: 1160px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .container-for-elements{
@@ -672,7 +673,7 @@ img{
 /*Footer*/
 
 .page-footer{
-  padding: 62px 140px 55px 138px;
+  padding: 62px 0 55px 0;
   color: #ffffff;
   background-color: #444444;
 }
