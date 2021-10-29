@@ -223,10 +223,6 @@ img{
   display: none;
 }
 
-.nav-link:active::before{
-  display: none;
-}
-
 .nav-form{
   display: flex;
   position: relative;
@@ -325,6 +321,7 @@ img{
   height: 2px;
   bottom: -10px;
   left: 0;
+  margin-top: 20px;
 }
 
 .nav-list-bottom .nav-link:hover::after{
@@ -637,6 +634,15 @@ img{
   margin-bottom: 0;
 }
 
+.services-slider-item-1::after{
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 165px;
+  background: url("../image/service-slider/delivery.svg") no-repeat center;
+  transform: translate(555px,-160px)
+}
+
 .service-button:hover{
   background: #FFC700;
 }
@@ -828,9 +834,25 @@ img{
 }
 
 .about-item{
+  position: relative;
   font-weight: 700;
   line-height: 20px;
   margin-bottom: 20px;
+  padding-left: 33px;
+}
+
+.about-item::before{
+  content: "";
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+  background: #FFC700;
+  border-radius: 50%;
+
+  left: 0;
+  margin-top: -4px;
+  top: 50%;
 }
 
 .about-item:last-of-type{
@@ -925,7 +947,17 @@ img{
   border-bottom: 3px solid rgba(0, 0, 0, .1);
 }
 
+.newsletter-form-field:hover{
+  border-bottom: 3px solid rgba(0, 0, 0, .2);
+}
+
+.newsletter-form-field:focus{
+  background: #DCDCDC;
+}
+
 .newsletter-form-field::placeholder{
+  position: relative;
+  top: 2px;
   font-size: 18px;
   color: #444444;
   opacity: 0.5;
@@ -946,9 +978,35 @@ img{
   box-sizing: border-box;
 }
 
+.newsletter-button:hover{
+  color: #FFFFFF;
+  background-color: #000000;
+  border: 3px solid #000000;
+}
+
+.newsletter-button:active{
+  color: rgba(255, 255, 255, .3);
+}
+
+.newsletter-button:focus{
+  border-color: #AF4FFF;
+}
+
 .free{
+  position: relative;
   font-size: 18px;
   color: #444444;
+}
+
+.free::before{
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: url("../image/tick-big.svg");
+  margin-top: -7px;
+  top: 50%;
+  left: -35px;
 }
 
 /*Footer*/
@@ -983,7 +1041,6 @@ img{
   margin-top: 65px;
 }
 
-
 .footer-contacts-address {
   font-style: normal;
   font-size: 16px;
@@ -1012,6 +1069,34 @@ img{
 
 .footer-button{
   color: #ffffff;
+}
+
+.footer-button:hover{
+  color: #FFC700;
+}
+
+.footer-button:hover::after{
+  content: "";
+  position: absolute;
+
+  width: 99%;
+  height: 2px;
+  background-color: #FFC700;
+
+  left: 0;
+  bottom: -10px;
+}
+
+.footer-button:active{
+  opacity: .3;
+}
+
+.footer-button:focus::before{
+  display: block;
+}
+
+.footer-button:hover::before{
+  display: none;
 }
 
 .footer-column-3{
