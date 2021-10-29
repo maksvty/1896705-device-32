@@ -564,13 +564,17 @@ img{
   background: #FFC700;
 }
 
-.goods-link:active .goods-icon-wrapper,
-.goods-link:active .goods-item-title{
+.goods-link:active .goods-item-title,
+.goods-link:active .goods-icon{
   opacity: 0.3;
 }
 
-.goods-link:active .goods-icon-wrapper{
-  background: #FFC700;
+.goods-link:active:focus .goods-icon-wrapper{
+  outline: none;
+}
+
+.goods-link:active:focus .goods-item-title{
+  color: #000000;
 }
 
 .goods-link:focus .goods-icon-wrapper{
@@ -684,29 +688,48 @@ img{
   text-decoration: none;
 
   display: flex;
-  justify-content: center;
   align-items: center;
   color: #000000;
   background-color: #F0F0F0;
-  padding: 10px 0;
+  padding: 10px 0px;
   min-height: 100px;
   box-sizing: border-box;
 }
 
-.rare-delivery-container::before{
+/*.rare-delivery-container::before{
   content: "";
   position: absolute;
   left: 0;
   width: 125px;
   height: 100%;
   background: #FFE17F url("../image/rare-delivery.svg") no-repeat center;
+}*/
+
+.rare-delivery-icon-wrapper{
+  display: flex;
+  width: 125px;
+  justify-content: center;
+  margin-right: 197px;
+}
+
+.rare-delivery-icon-wrapper::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 125px;
+  background: #FFE17F;
+}
+
+.rare-delivery-icon{
+  z-index: 1;
 }
 
 .rare-delivery-container:hover{
   background: #EBEBEB;
 }
 
-.rare-delivery-container:hover::before{
+.rare-delivery-container:hover .rare-delivery-icon-wrapper::before{
   background-color: #FFC700;
 }
 
@@ -714,18 +737,29 @@ img{
   background: #EBEBEB;
 }
 
+.rare-delivery-container:active:focus{
+  outline: none;
+}
+
+.rare-delivery-container:active .rare-delivery-icon-wrapper{
+  fill-opacity: 0.3;
+}
+
+.rare-delivery-container:active .rare-delivery-title{
+  opacity: 0.3;
+}
+
 .rare-delivery-container:focus{
   outline: 5px solid #AF4FFF;
 }
 
 .info{
-  position: absolute;
-  right: 40px;
   width: 40px;
   height: 40px;
   background: rgba(220, 220, 220, 0.5);
   border-radius: 50%;
   fill-opacity: .3;
+  margin-right: 33px;
 }
 
 .rare-delivery-container:hover .info {
@@ -746,6 +780,7 @@ img{
   line-height: 23px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  margin-right: auto;
 }
 
 
