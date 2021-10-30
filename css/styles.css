@@ -215,7 +215,7 @@ img{
   opacity: 0.3;
 }
 
-.nav-link:focus::before{
+.nav-link:focus-visible::before{
   display: block;
 }
 
@@ -702,15 +702,6 @@ img{
   box-sizing: border-box;
 }
 
-/*.rare-delivery-container::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 125px;
-  height: 100%;
-  background: #FFE17F url("../image/rare-delivery.svg") no-repeat center;
-}*/
-
 .rare-delivery-icon-wrapper{
   display: flex;
   width: 125px;
@@ -786,6 +777,7 @@ img{
   line-height: 23px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  width: 530px;
   margin-right: auto;
 }
 
@@ -992,6 +984,10 @@ img{
   border-color: #AF4FFF;
 }
 
+.newsletter-button:hover:focus{
+  border-color: #000000;
+}
+
 .free{
   position: relative;
   font-size: 18px;
@@ -1118,8 +1114,27 @@ img{
   font-style: normal;
 }
 
-.htmlacademy-link{
+.htmlacademy-link .html-logo{
   display: block;
+  fill: #FFC700;
+}
+
+.htmlacademy-link:hover .html-logo{
+  fill: #FFFFFF;
+}
+
+.htmlacademy-link:active .html-logo{
+  opacity: .3;
+}
+
+.htmlacademy-link:focus .html-logo{
+  outline: 2px solid #AF4FFF;
+  outline-offset: 10px;
+  border-radius: 10px;
+}
+
+.htmlacademy-link:hover:focus .html-logo{
+  outline: none;
 }
 
 .footer-social-list{
@@ -1130,10 +1145,30 @@ img{
   grid-gap: 15px;
 }
 
-.footer-social-item{
+.button-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
+  transition: background .1s linear, outline .1s ease-out;
+}
+
+.button-social:hover{
+  background-color: #FFC700;
+}
+
+.button-social:active{
+  fill-opacity: .3;
+}
+
+.button-social:focus{
+  outline: 5px solid #AF4FFF;
+}
+
+.button-social:hover:focus{
+  outline: none;
 }
 
 /*Catalog.html*/
