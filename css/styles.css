@@ -1515,7 +1515,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 .modal{
-  font-family: Rubik, sans-serif;
+  font-family: "Rubik", sans-serif;
   position: relative;
   margin: auto;
   padding: 62px 70px;
@@ -1881,7 +1881,7 @@ input::-webkit-inner-spin-button {
 .catalog-filter{
   position: relative;
   flex-grow: 1;
-  padding-left: 58px;
+  padding-left: 59px;
   padding-top: 69px;
   color: #000000;
   background-color: #EBEBEB;
@@ -2197,6 +2197,7 @@ input::-webkit-inner-spin-button {
 }
 
 .sort-button{
+  padding: 0;
   position: absolute;
   fill-opacity: .2;
   background-color: transparent;
