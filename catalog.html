@@ -49,7 +49,32 @@
             </ul>
           </div>
           <div class="nav-bottom nav-flex">
-            <a class="nav-catalog nav-link focus-border" href="catalog.html">Каталог товаров</a>
+            <ul class="nav-catalog">
+              <a class="nav-catalog-link nav-link focus-border" href="catalog.html">Каталог товаров</a>
+              <ul class="nav-subcatalog">
+                <li class="nav-item">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#">Виртуальная реальность</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#">Фитнес-браслеты</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#">Квадракоптеры</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#">Моноподы для селфи</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#">Умные часы</a>
+                </li>
+                <li class="nav-item cameras">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#">Экшн-камеры</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-subcatalog-link focus-border" href="#"></a>
+                </li>
+              </ul>
+            </ul>
             <ul class="nav-list nav-list-bottom">
               <li class="nav-item nav-item-delivery">
                <a class="nav-link focus-border" href="#">Доставка</a>
@@ -88,57 +113,75 @@
           <section class="filter">
             <h2 class="catalog-title filter-title">Фильтр:</h2>
             <div class="catalog-filter">
-              <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
+              <form class="filter-form" action="https://echo.htmlacademy.ru/" method="post">
                 <fieldset class="filter-form-group">
                   <legend class="filter-form-title">Стоимость</legend>
-                  <button class="range-toggle toggle-min" type="button">
-                    <span class="visually-hidden">Изменить минимальную цену.</span>
-                  </button>
-                  <button class="range-toggle toggle-max" type="button">
-                    <span class="visually-hidden">Изменить максимальную цену.</span>
-                  </button>
-                  <label class="filter-label">
-                  от <input class="filter-input" type="number" name="min-price"> ₽
-                  </label>
-                  <label class="filter-label">
-                  до <input class="filter-input" type="number" name="max-price"> ₽
-                  </label>
+                  <div class="range">
+                    <div class="range-scale">
+                      <div class="range-bar" style="left: 9px; width: 110px;">
+                        <button class="range-toggle toggle-min" type="button">
+                          <span class="visually-hidden">Изменить минимальную цену</span>
+                        </button>
+                        <button class="range-toggle toggle-max" type="button">
+                          <span class="visually-hidden">Изменить максимальную цену</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="range-wrapper-inputs" style="left: 9px; width: 110px;">
+                      <label class="filter-label filter-label-min">
+                      от <input class="range-input" type="number" name="min-price" value="0">
+                      </label>
+                      <label class="filter-label filter-label-max">
+                      до <input class="range-input" type="number" name="max-price" value="5000">
+                      </label>
+                    </div>
+                  </div>
                 </fieldset>
                 <fieldset class="filter-form-group">
                   <legend class="filter-form-title">Цвет</legend>
                   <ul class="filter-form-list">
-                    <li class="catalog-filter-form-item">
+                    <li class="filter-form-item">
                       <label class="control">
-                        <span class="control-mark"></span>
-                        <input class="filter-form-checkbox visually-hidden" type="checkbox" name="color-black" checked>
-                        <span class="control-label">Черный</span>
+                        <input class="control-input filter-form-checkbox visually-hidden" type="checkbox" name="color-black" checked>
+                        <span class="control-mark">
+                          <svg class="control-icon" width="10" height="10" fill="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M10 0 3.1 6.6 0 3.6v3.3L3.2 10 10 3.3V0Z"/></svg>
+                        </span>
+                        <span class="control-label">Чёрный</span>
                       </label>
                     </li>
                     <li class="filter-form-item">
                       <label class="control">
-                        <span class="control-mark"></span>
-                        <input class="filter-form-checkbox visually-hidden" type="checkbox" name="color-black" checked>
+                        <input class="control-input filter-form-checkbox visually-hidden" type="checkbox" name="color-white" checked>
+                        <span class="control-mark">
+                          <svg class="control-icon" width="10" height="10" fill="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M10 0 3.1 6.6 0 3.6v3.3L3.2 10 10 3.3V0Z"/></svg>
+                        </span>
                         <span class="control-label">Белый</span>
                       </label>
                     </li>
-                    <li class="catalog-filter-form-item">
+                    <li class="filter-form-item">
                       <label class="control">
-                        <span class="control-mark"></span>
-                        <input class="filter-form-checkbox visually-hidden" type="checkbox" name="color-black">
+                        <input class="control-input filter-form-checkbox visually-hidden" type="checkbox" name="color-blue">
+                        <span class="control-mark">
+                          <svg class="control-icon" width="10" height="10" fill="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M10 0 3.1 6.6 0 3.6v3.3L3.2 10 10 3.3V0Z"/></svg>
+                        </span>
                         <span class="control-label">Синий</span>
                       </label>
                     </li>
-                    <li class="cfilter-form-item">
+                    <li class="filter-form-item">
                       <label class="control">
-                        <span class="control-mark"></span>
-                        <input class="filter-form-checkbox visually-hidden" type="checkbox" name="color-black">
+                        <input class="control-input filter-form-checkbox visually-hidden" type="checkbox" name="color-red">
+                        <span class="control-mark">
+                          <svg class="control-icon" width="10" height="10" fill="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M10 0 3.1 6.6 0 3.6v3.3L3.2 10 10 3.3V0Z"/></svg>
+                        </span>
                         <span class="control-label">Красный</span>
                       </label>
                     </li>
                     <li class="filter-form-item">
                       <label class="control">
-                        <span class="control-mark"></span>
-                        <input class="filter-form-checkbox visually-hidden" type="checkbox" name="color-black">
+                        <input class="control-input filter-form-checkbox visually-hidden" type="checkbox" name="color-pink">
+                        <span class="control-mark">
+                          <svg class="control-icon" width="10" height="10" fill="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M10 0 3.1 6.6 0 3.6v3.3L3.2 10 10 3.3V0Z"/></svg>
+                        </span>
                         <span class="control-label">Розовый</span>
                       </label>
                     </li>
@@ -148,22 +191,22 @@
                   <legend class="filter-form-title">Bluetooth</legend>
                   <ul class="filter-form-list">
                     <li class="filter-form-item">
-                    <label class="control">
-                      <span class="control-mark"></span>
-                      <input class="filter-form-radio visually-hidden" type="radio" name="bluetooth" value="yes" checked>
-                      <span class="control-label">Есть</span>
-                    </label>
+                      <label class="control">
+                        <input class="control-input filter-form-radio visually-hidden" type="radio" name="bluetooth" value="yes" checked>
+                        <span class="control-mark"></span>
+                        <span class="control-label">Есть</span>
+                      </label>
                     </li>
                     <li class="filter-form-item">
                       <label class="control">
-                      <span class="control-mark"></span>
-                      <input class="filter-form-radio visually-hidden" type="radio" name="bluetooth" value="no">
-                      <span class="control-label">Нет</span>
-                    </label>
+                        <input class="control-input filter-form-radio visually-hidden" type="radio" name="bluetooth" value="no">
+                        <span class="control-mark"></span>
+                        <span class="control-label">Нет</span>
+                      </label>
                     </li>
                   </ul>
                 </fieldset>
-                <button class="button filter-button" type="submit">Показать</button>
+                <button class="button filter-button button-line-decoration" type="submit">Показать</button>
               </form>
             </div>
           </section>
@@ -180,8 +223,12 @@
                 </select>
                 <button class="visually-hidden" type="submit">Отсортировать продукты</button>
               </form>
-              <button class="button sort-button" type="button"></button>
-              <button class="button sort-button" type="button"></button>
+              <button class="button sort-button sort-button-up" type="button">
+                <svg class="sort-button-icon" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0L11 10H0" fill="black"/></svg>
+              </button>
+              <button class="button sort-button sort-button-down sort-button-current" type="button">
+                <svg class="sort-button-icon" width="11" height="10" fill="none" viewBox="0 0 11 10" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10 0 0h11" fill="#000"/></svg>
+              </button>
             </div>
             <div class="products">
               <ul class="product-list">
