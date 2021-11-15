@@ -84,6 +84,10 @@ body{
   background-color: transparent;
 }
 
+.button:focus-visible{
+  outline: none;
+}
+
 .button-line-decoration{
   padding: 10px;
 }
@@ -210,6 +214,10 @@ body{
   display: block;
 }
 
+.nav-link:focus-visible{
+  outline: none;
+}
+
 .nav-top .nav-link:active{
   opacity: 0.3;
 }
@@ -263,7 +271,6 @@ body{
   padding: 0;
   margin: 0;
   padding-right: 10px;
-
 }
 
 .nav-search::placeholder{
@@ -275,6 +282,10 @@ body{
 
 .nav-search:hover::placeholder{
   color: rgba(0,0,0,.6);
+}
+
+.nav-search:focus-visible{
+  outline: none;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -312,6 +323,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .search-button:focus-visible{
   border-color: #AF4FFF;
+  outline: none;
 }
 
 .search-button:active{
@@ -788,12 +800,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   opacity: 0.6;
 }
 
-.slider-pagination-button:active{
-  opacity: 0.3;
+.slider-pagination-button:focus,
+.slider-pagination-button:focus-visible{
+  border-color: #AF4FFF;
 }
 
-.slider-pagination-button:focus{
-  border-color: #AF4FFF;
+.slider-pagination-button:active{
+  opacity: 0.3;
 }
 
 .slider-pagination-button-current{
@@ -843,6 +856,19 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   background: #FFC700;
 }
 
+.goods-link:focus .goods-icon-wrapper{
+  outline: 5px solid #AF4FFF;
+}
+
+.goods-link:focus  .goods-item-title{
+  color: #AF4FFF;
+}
+
+.goods-link:focus-visible{
+  outline: none;
+}
+
+
 .goods-link:active .goods-item-title,
 .goods-link:active .goods-icon{
   opacity: 0.3;
@@ -854,14 +880,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .goods-link:active:focus .goods-item-title{
   color: #000000;
-}
-
-.goods-link:focus .goods-icon-wrapper{
-  outline: 5px solid #AF4FFF;
-}
-
-.goods-link:focus  .goods-item-title{
-  color: #AF4FFF;
 }
 
 /*Title*/
@@ -1059,9 +1077,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   width: 40px;
   height: 40px;
   background: rgba(220, 220, 220, 0.5);
+  border-color: transparent;
   border-radius: 50%;
   fill-opacity: .3;
   margin-right: 33px;
+  cursor: pointer;
 }
 
 .rare-delivery-container:hover .info {
@@ -1263,6 +1283,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   background: #DCDCDC;
 }
 
+.newsletter-form-field:focus-visible{
+  outline: none;
+}
+
 .newsletter-form-field::placeholder{
   position: relative;
   top: 2px;
@@ -1292,12 +1316,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   border: 3px solid #000000;
 }
 
-.newsletter-button:active{
-  color: rgba(255, 255, 255, .3);
-}
-
 .newsletter-button:focus{
   border-color: #AF4FFF;
+}
+
+.newsletter-button:focus-visible{
+  outline: 0;
+}
+
+.newsletter-button:active{
+  color: rgba(255, 255, 255, .3);
 }
 
 .newsletter-button:hover:focus{
@@ -1332,6 +1360,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .footer-logo{
   display: block;
   margin-bottom: 25px;
+}
+
+.footer-logo:focus-visible{
+  outline: none;
 }
 
 /*Footer layout*/
@@ -1438,6 +1470,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   font-style: normal;
 }
 
+.footer-contacts-phone:focus-visible{
+  outline: none;
+}
+
 .htmlacademy-link .html-logo{
   fill: #FFC700;
 }
@@ -1446,17 +1482,21 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   fill: #FFFFFF;
 }
 
-.htmlacademy-link:active .html-logo{
-  opacity: .3;
-}
-
 .htmlacademy-link:focus .html-logo{
   outline: 2px solid #AF4FFF;
   outline-offset: 9px;
   border-radius: 5px;
 }
 
-.htmlacademy-link:focus:hover .html-logo{
+.htmlacademy-link:focus-visible{
+  outline: none;
+}
+
+.htmlacademy-link:active .html-logo{
+  opacity: .3;
+}
+
+.htmlacademy-link:hover:focus .html-logo{
   outline: none;
 }
 
@@ -2192,6 +2232,10 @@ input::-webkit-inner-spin-button {
   border-color: #AF4FFF;
 }
 
+.select-control:focus-visible{
+  outline: none;
+}
+
 .select-control:active{
   opacity: 0.3;
 }
@@ -2264,6 +2308,9 @@ input::-webkit-inner-spin-button {
 .product-card-link:focus .product-card-title,
 .product-card-link:focus .cost{
   color: #AF4FFF;
+}
+.product-card-link:focus-visible{
+  outline: none;
 }
 
 .product-card-image-wrapper{
